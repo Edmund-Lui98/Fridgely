@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ShoppingList extends StatefulWidget {
+  const ShoppingList({super.key});
+
   @override
-  _ShoppingListState createState() => _ShoppingListState();
+  State<ShoppingList> createState() => _ShoppingListState();
 }
 
 class _ShoppingListState extends State<ShoppingList> {

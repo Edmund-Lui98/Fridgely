@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "5704962842",
+    "firebase_url": "https://fridgely-93045-default-rtdb.firebaseio.com",
+    "project_id": "fridgely-93045",
+    "storage_bucket": "fridgely-93045.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5704962842:android:71b5ccda08619fa9d592a3",
+        "android_client_info": {
+          "package_name": "com.example.fridge_expiry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5704962842-tjbldan811lf3jirrslp5eeq1c3gghqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxguF-JNZcmUOHY3-qyXDO_mBNAfHNHFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5704962842-tjbldan811lf3jirrslp5eeq1c3gghqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
