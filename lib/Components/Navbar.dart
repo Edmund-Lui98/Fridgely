@@ -34,6 +34,7 @@ class _NavbarState extends State<Navbar> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: _tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
