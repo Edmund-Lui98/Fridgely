@@ -2,7 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class FridgeList extends StatefulWidget {
-  const FridgeList({super.key});
+  const FridgeList({super.key, required this.search});
+
+  final String search;
 
   @override
   State<FridgeList> createState() => _FridgeListState();
@@ -30,28 +32,15 @@ class _FridgeListState extends State<FridgeList> {
           }
 
           var docs = snapshot.data!.docs;
-          return Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.all(16),
-                child: TextField(
-                  onChanged: (value) {
-                    setState(() {});
-                  },
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.search),
-                    hintText: 'Search...',
-                    contentPadding: EdgeInsets.symmetric(vertical: 10.0),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(
-                  child: ListView.builder(
-                itemCount: docs.length,
-                itemBuilder: (context, index) {
+
+          return ListView.builder(
+              itemCount: docs.length,
+              itemBuilder: (context, index) {
+                if (widget.search == "" ||
+                    docs[index]["Name"]
+                        .toString()
+                        .toLowerCase()
+                        .contains(widget.search.toLowerCase())) {
                   return Padding(
                       padding: EdgeInsets.fromLTRB(
                           screenWidth * 0.03,
@@ -84,10 +73,9 @@ class _FridgeListState extends State<FridgeList> {
                               ],
                             ),
                           )));
-                },
-              ))
-            ],
-          );
+                }
+                return SizedBox.shrink();
+              });
         },
       ),
     );
